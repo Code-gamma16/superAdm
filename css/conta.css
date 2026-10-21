@@ -1,0 +1,82 @@
+/* =========================================================
+   FRIGUS UI — conta.css  (Plano e Perfil)
+   ========================================================= */
+
+/* ---------- Plano ---------- */
+.current-plan { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding: 28px; background: var(--frigus-navy); color: #fff; border: 0; }
+.current-plan .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--frigus-pale); }
+.current-plan h2 { margin-top: 6px; font-family: var(--font-display); font-size: 38px; font-weight: 500; letter-spacing: .03em; }
+.current-plan .price { margin-top: 2px; font-size: 18px; color: var(--frigus-pale); }
+.current-plan .price strong { color: #fff; font-size: 24px; }
+.current-plan p.desc { margin-top: 12px; max-width: 520px; color: var(--frigus-pale); }
+.current-plan .btn-secondary { border-color: transparent; }
+
+.plans-title { margin: 32px 0 16px; font-size: 20px; }
+.plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.plan-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; }
+.plan-card.is-current { border: 2px solid var(--frigus-primary); }
+.plan-card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: .03em; }
+.plan-price { font-size: 14px; color: var(--text-secondary); }
+.plan-price strong { font-size: 28px; color: var(--frigus-navy); }
+.plan-card .desc { font-size: 14px; color: var(--text-secondary); flex: 1; }
+.plan-capacity {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: var(--radius);
+  background: var(--frigus-tint); font-size: 13px; font-weight: 600; color: var(--frigus-mid);
+}
+
+/* ---------- Perfil ---------- */
+.profile-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.profile-head { display: flex; align-items: center; gap: 16px; padding: 24px 20px; border-bottom: 1px solid var(--border); }
+.profile-head .avatar { width: 60px; height: 60px; font-size: 20px; }
+.profile-head h2 { font-size: 20px; }
+.profile-head p { font-size: 14px; color: var(--text-secondary); }
+
+.data-list > div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.data-list > div:last-child { border-bottom: 0; }
+.data-list dt { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+.data-list dd { text-align: right; font-weight: 500; }
+
+.action-list { display: flex; flex-direction: column; }
+.action-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.action-list li:last-child { border-bottom: 0; }
+.action-list strong { display: block; font-weight: 600; }
+.action-list small { font-size: 13px; color: var(--text-secondary); }
+.danger-zone .card-title { color: var(--danger-text); }
+
+@media (max-width: 960px) { .profile-layout { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Plano da empresa (layout próprio) ---------- */
+.pe-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
+.pe-hero {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  padding: 40px; border-radius: var(--radius-lg); color: #fff;
+  background: linear-gradient(145deg, var(--frigus-navy) 0%, #1B2E8A 100%); box-shadow: var(--shadow-md);
+}
+.pe-hero::after {
+  content: ''; position: absolute; right: -90px; top: -90px; width: 280px; height: 280px;
+  border-radius: 50%; background: rgba(112, 162, 215, .16);
+}
+.pe-hero > * { position: relative; z-index: 1; }
+.pe-hero-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.pe-hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--frigus-pale); }
+.pe-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, .14); font-size: 12px; font-weight: 600; }
+.pe-badge .icon { width: 14px; height: 14px; }
+.pe-hero h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); font-weight: 500; letter-spacing: .03em; line-height: 1.05; }
+.pe-price { font-size: 18px; color: var(--frigus-pale); }
+.pe-price strong { color: #fff; font-size: 32px; }
+.pe-desc { max-width: 460px; color: var(--frigus-pale); }
+.pe-features { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.pe-features li { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: var(--radius); background: rgba(255, 255, 255, .1); font-weight: 500; }
+.pe-features .icon { color: var(--frigus-yellow); stroke-width: 2.6; }
+.pe-hero .btn { align-self: flex-start; margin-top: 8px; border-color: transparent; }
+
+.pe-side { display: flex; flex-direction: column; gap: 24px; }
+.pe-usage-list li { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.pe-usage-list li:last-child { border-bottom: 0; }
+.pe-usage-list li > span:nth-child(2) { flex: 1; color: var(--text-secondary); }
+.pe-usage-list strong { font-size: 18px; color: var(--frigus-navy); }
+.pe-ico { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 10px; background: var(--frigus-tint); color: var(--frigus-primary); }
+.pe-store-list { display: flex; flex-direction: column; gap: 16px; padding: 18px 20px 22px; }
+.pe-store-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 6px; font-size: 14px; }
+.pe-store-top span { color: var(--text-secondary); font-size: 13px; white-space: nowrap; }
+@media (max-width: 960px) { .pe-layout { grid-template-columns: minmax(0, 1fr); } .pe-hero { padding: 28px; } }

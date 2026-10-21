@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guia de componentes — Frigus</title>
+  <link rel="icon" href="../img/logo-flake.png" type="image/png">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/portal.css">
+  <link rel="stylesheet" href="../css/v3.css">
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body class="">
+<div class="portal">
+  <h1>Design System Frigus</h1>
+  <p class="lead">Tudo é construído com variáveis CSS e classes reutilizáveis (global.css e components.css).</p>
+  <h2 class="section">Paleta</h2>
+  <div class="swatches"><div class="swatch"><i style="background:#2552C8"></i><div><b>Azul principal</b>#2552C8<br>--frigus-primary</div></div><div class="swatch"><i style="background:#131C55"></i><div><b>Azul-marinho</b>#131C55<br>--frigus-navy</div></div><div class="swatch"><i style="background:#1F5F97"></i><div><b>Azul intermediário</b>#1F5F97<br>--frigus-mid</div></div><div class="swatch"><i style="background:#70A2D7"></i><div><b>Azul-claro</b>#70A2D7<br>--frigus-light</div></div><div class="swatch"><i style="background:#C9DEF9"></i><div><b>Azul muito claro</b>#C9DEF9<br>--frigus-pale</div></div><div class="swatch"><i style="background:#F9C96B"></i><div><b>Amarelo (complementar)</b>#F9C96B<br>--frigus-yellow</div></div><div class="swatch"><i style="background:#F8F8F8"></i><div><b>Cinza muito claro</b>#F8F8F8<br>--surface-muted</div></div><div class="swatch"><i style="background:#1A1919"></i><div><b>Preto/cinza escuro</b>#1A1919<br>--frigus-dark</div></div></div>
+  <h2 class="section">Componentes</h2>
+  <section class="card" style="margin-top:12px">
+    <div class="demo-block"><h3>Tipografia</h3><p class="display" style="font-size:34px">Frigus — Nasalization</p><p style="font-size:20px;margin-top:6px">Sarabun para textos de interface</p><p class="muted">Texto auxiliar em cinza secundário.</p></div>
+    <div class="demo-block"><h3>Botões</h3><div class="demo-row"><button class="btn btn-primary">Primário</button><button class="btn btn-secondary">Secundário</button><button class="btn btn-ghost">Ghost</button><button class="btn btn-danger">Perigo</button><button class="btn btn-danger-outline">Perigo (contorno)</button><button class="btn btn-primary btn-sm">Pequeno</button></div></div>
+    <div class="demo-block"><h3>Status do produto</h3><div class="demo-row"><span class="badge badge-info">Validade longa</span><span class="badge badge-success">Regular</span><span class="badge badge-warning">Próximo do vencimento</span><span class="badge badge-orange">Atenção</span><span class="badge badge-danger">Vencido</span></div></div>
+    <div class="demo-block"><h3>Status de armazenamento</h3><div class="demo-row"><span class="badge badge-neutral">Vazio</span><span class="badge badge-soft">Ocupação baixa</span><span class="badge badge-info">Ocupação moderada</span><span class="badge badge-orange">Ocupação alta</span><span class="badge badge-danger">Cheia</span><span class="badge badge-navy">Ilimitado</span></div></div>
+    <div class="demo-block"><h3>Formulário</h3><div class="form-grid"><div class="form-group"><label class="label req" for="g1">Campo de texto</label><input class="input" id="g1" placeholder="Digite algo"></div><div class="form-group"><label class="label" for="g2">Select</label><select class="select" id="g2"><option>Laticínios</option><option>Grãos</option></select></div></div></div>
+    <div class="demo-block"><h3>Feedback</h3><div class="demo-row"><button class="btn btn-secondary" type="button" data-toast="Produto adicionado com sucesso.">Mostrar toast</button><button class="btn btn-secondary" type="button" data-open="g-modal">Abrir modal de confirmação</button></div></div>
+  </section>
+</div>
+<div class="overlay" id="overlay"></div><div class="toast-region" id="toasts" aria-live="polite"></div>
+<!-- ===== Modal de confirmação: g-modal ===== -->
+<div class="modal" id="g-modal" role="alertdialog" aria-modal="true" aria-labelledby="g-modal-t" aria-hidden="true">
+  <form data-demo data-toast="Produto excluído." method="post" action="#">
+    <input type="hidden" name="action" value="/deletar-pg">
+    <div class="modal-body"><span class="modal-icon"><svg class="icon " aria-hidden="true" viewBox="0 0 24 24" data-icon="i-trash"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></span>
+      <h2 id="g-modal-t">Excluir produto?</h2>
+      <p>Você está prestes a remover "<strong>Leite Integral</strong>" desta geladeira.</p><p>Esta ação não poderá ser desfeita.</p></div>
+    <div class="modal-footer"><button class="btn btn-secondary" type="button" data-close>Cancelar</button><button class="btn btn-danger" type="submit">Excluir produto</button></div>
+  </form>
+</div>
+
+
+  <script src="../js/ui.js"></script>
+  <script src="../js/v3.js"></script>
+</body>
+</html>

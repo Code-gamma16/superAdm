@@ -1,0 +1,49 @@
+/* =========================================================
+   FRIGUS UI — compras.css
+   Lista de compras em formato de checklist agrupado por categoria.
+   ========================================================= */
+
+.shopping-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }
+
+.list-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.list-actions .toolbar-spacer { flex: 1; }
+.list-date { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); }
+.list-date .select { width: auto; min-height: 36px; }
+
+.shop-group { padding: 8px 0 4px; }
+.shop-group + .shop-group { border-top: 1px solid var(--border); }
+.shop-group-title {
+  display: flex; align-items: center; gap: 8px; padding: 12px 20px 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--frigus-mid);
+}
+.shop-group-title .count { font-weight: 600; color: var(--text-secondary); letter-spacing: 0; text-transform: none; }
+
+.shop-item { display: flex; align-items: center; gap: 14px; padding: 8px 20px; }
+.shop-item:hover { background: #FAFBFE; }
+.shop-item input[type="checkbox"] { width: 22px; height: 22px; flex: none; accent-color: var(--frigus-primary); }
+.shop-item label { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 10px; padding: 6px 0; cursor: pointer; }
+.shop-item .name { font-size: 16px; font-weight: 500; }
+.shop-item .brand { font-size: 12px; color: var(--text-secondary); }
+.shop-item .qty { margin-left: auto; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.shop-item .item-actions { display: flex; opacity: 0; transition: opacity .15s; }
+.shop-item:hover .item-actions, .shop-item:focus-within .item-actions { opacity: 1; }
+.shop-item.is-done .name, .shop-item.is-done .qty { text-decoration: line-through; color: var(--text-secondary); font-weight: 400; }
+
+/* Painel lateral: conexão estoque ↔ receitas */
+.side-stack { display: flex; flex-direction: column; gap: 16px; }
+.suggestion { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+.suggestion h3 { font-size: 15px; }
+.suggestion p { font-size: 13px; color: var(--text-secondary); }
+.suggestion ul { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.suggestion ul li { display: flex; justify-content: space-between; gap: 8px; }
+.suggestion ul small { color: var(--text-secondary); }
+
+/* Modal "produtos em falta" */
+.pick-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); }
+.pick-list label { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--border); cursor: pointer; }
+.pick-list label:last-child { border-bottom: 0; }
+.pick-list input { width: 18px; height: 18px; accent-color: var(--frigus-primary); }
+.pick-list small { margin-left: auto; color: var(--text-secondary); }
+
+@media (max-width: 1100px) { .shopping-layout { grid-template-columns: minmax(0, 1fr); } }
+@media (hover: none) { .shop-item .item-actions { opacity: 1; } }

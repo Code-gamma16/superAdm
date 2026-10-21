@@ -1,0 +1,29 @@
+/* =========================================================
+   FRIGUS UI — produtos.css
+   Tabela de produtos armazenados + drawer de produto.
+   ========================================================= */
+
+.products-table th, .products-table td { padding-left: 12px; padding-right: 12px; }
+.products-table .col-name { min-width: 150px; }
+.products-table td:nth-child(n+4) { white-space: nowrap; }
+.products-table .actions { min-width: 112px; }
+.products-table td.qty { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.products-table .due-today { color: var(--orange-text); font-weight: 600; }
+.products-table .due-expired { color: var(--danger-text); font-weight: 600; }
+
+/* Prévia do status calculado dentro do drawer */
+.status-preview {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 14px; border-radius: var(--radius); background: var(--frigus-tint);
+  font-size: 13px; color: var(--text-secondary);
+}
+
+/* Bloco "produto já cadastrado" */
+.catalog-pick { padding: 14px; border-radius: var(--radius); background: var(--surface-muted); border: 1px dashed var(--border-strong); }
+
+/* Visualização (somente leitura): destaca que nada será salvo */
+.is-view .catalog-pick { display: none; }
+
+@media (max-width: 720px) {
+  .products-table { min-width: 860px; }
+}

@@ -1,0 +1,43 @@
+/* =========================================================
+   FRIGUS UI — dashboard.css  (Visão geral)
+   ========================================================= */
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+.stat { padding: 18px 20px; }
+.stat-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+.stat-value { margin-top: 6px; font-size: 32px; font-weight: 700; line-height: 1.1; color: var(--frigus-navy); }
+.stat-hint { margin-top: 4px; font-size: 12px; color: var(--text-secondary); }
+.stat.is-alert .stat-value { color: var(--orange-text); }
+.stat.is-danger .stat-value { color: var(--danger-text); }
+
+.dash-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.dash-col { display: flex; flex-direction: column; gap: 24px; }
+
+/* Lista de itens com badge */
+.item-list li {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+}
+.item-list li:last-child { border-bottom: 0; }
+.item-main { min-width: 0; }
+.item-main strong { display: block; font-weight: 600; }
+.item-main small { color: var(--text-secondary); font-size: 13px; }
+.item-side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; flex: none; }
+.item-side small { font-size: 12px; color: var(--text-secondary); }
+
+/* Validades mais próximas */
+.date-block {
+  flex: none; width: 48px; padding: 6px 0; text-align: center; border-radius: var(--radius);
+  background: var(--frigus-tint); color: var(--frigus-navy); line-height: 1.1;
+}
+.date-block b { display: block; font-size: 18px; }
+.date-block span { font-size: 11px; font-weight: 600; text-transform: uppercase; }
+.date-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
+
+/* Sugestões de receita */
+.suggest-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.suggest-row .item-main small { display: block; }
+
+@media (max-width: 1100px) { .dash-grid { grid-template-columns: minmax(0, 1fr); } }
+
+@media (max-width: 560px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

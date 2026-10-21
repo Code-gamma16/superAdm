@@ -1,0 +1,48 @@
+/* =========================================================
+   FRIGUS UI — armazenamento.css
+   Geladeiras (usuário) e Frigoríficos (empresa): grid de cards
+   e página de detalhe.
+   ========================================================= */
+
+.store-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 20px; }
+
+.store-card { display: flex; flex-direction: column; gap: 16px; padding: 20px; }
+.store-card-top { display: flex; align-items: flex-start; gap: 14px; }
+.store-icon {
+  width: 44px; height: 44px; flex: none; display: grid; place-items: center;
+  border-radius: var(--radius); background: var(--frigus-tint); color: var(--frigus-primary);
+}
+.store-icon .icon { width: 24px; height: 24px; }
+.store-card h2 { font-size: 18px; }
+.store-type { font-size: 13px; color: var(--text-secondary); }
+.store-top-text { flex: 1; min-width: 0; }
+.store-address { display: flex; gap: 8px; margin-top: 6px; font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
+.store-address .icon { width: 15px; height: 15px; margin-top: 2px; color: var(--frigus-light); }
+
+.store-occupancy { display: flex; flex-direction: column; gap: 8px; }
+.store-occupancy-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--text-secondary); }
+.store-occupancy-head strong { color: var(--text-primary); }
+
+.store-facts { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.store-facts li { display: flex; align-items: center; gap: 8px; }
+.store-facts .icon { width: 16px; height: 16px; color: var(--text-secondary); }
+.store-facts .is-warn { color: var(--orange-text); font-weight: 600; }
+.store-facts .is-warn .icon { color: var(--orange-text); }
+.store-facts .is-danger { color: var(--danger-text); font-weight: 600; }
+.store-facts .is-danger .icon { color: var(--danger-text); }
+.store-facts .is-ok .icon { color: var(--success-text); }
+
+.store-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 4px; }
+.store-actions .btn { flex: 1; }
+
+.store-card-add {
+  min-height: 230px; align-items: center; justify-content: center; text-align: center;
+  border: 2px dashed var(--border-strong); background: transparent; box-shadow: none; color: var(--text-secondary);
+}
+.store-card-add:hover { border-color: var(--frigus-light); background: var(--frigus-tint); color: var(--frigus-primary); }
+
+/* ---------- Detalhe ---------- */
+.detail-stats { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 10px; }
+.detail-stat { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary); }
+.detail-stat strong { color: var(--text-primary); }
+.detail-occupancy { max-width: 360px; margin-top: 14px; }
